@@ -1,0 +1,17 @@
+{
+  "name": "org.pcsoft.unity.editor-ex",
+  "version": "1.0.0",
+  "displayName": "Unity Editor Extension",
+  "description": "Extension for Editor system of Unity.",
+  "unity": "2021.1",
+  "keywords": [
+    "editor",
+    "extension",
+    "tooling"
+  ],
+  "author": {
+    "name": "Pfeiffer C Soft",
+    "email": "kl3in3rhack3r@gmail.com",
+    "url": "https://github.com/KleinerHacker/unity-editor-ex"
+  }
+}
