@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ExtendedEditor.Runtime.editor_ex.Scripts._00_Runtime.Types;
+using UnityEditorEx.Runtime.editor_ex.Scripts._00_Runtime.Types;
 
-namespace ExtendedEditor.Runtime.editor_ex.Scripts._00_Runtime.Utils
+namespace UnityEditorEx.Runtime.editor_ex.Scripts._00_Runtime.Utils
 {
     public static class ArrayUtils
     {

@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using ExtendedEditor.Editor.editor_ex.Scripts._90_Editor.Commons;
-using ExtendedEditor.Editor.editor_ex.Scripts._90_Editor.Utils.Extensions;
 using UnityEditor;
+using UnityEditorEx.Editor.editor_ex.Scripts._90_Editor.Commons;
+using UnityEditorEx.Editor.editor_ex.Scripts._90_Editor.Utils.Extensions;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace ExtendedEditor.Editor.editor_ex.Scripts._90_Editor
+namespace UnityEditorEx.Editor.editor_ex.Scripts._90_Editor
 {
     public abstract class ExtendedEditor : UnityEditor.Editor
     {

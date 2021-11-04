@@ -1,6 +1,6 @@
 {
-    "name": "ExtendedEditor.Runtime",
-    "rootNamespace": "ExtendedEditor.Runtime",
+    "name": "UnityEditorEx.Runtime",
+    "rootNamespace": "UnityEditorEx.Runtime",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

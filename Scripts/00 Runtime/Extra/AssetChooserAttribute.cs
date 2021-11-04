@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ExtendedEditor.Runtime.editor_ex.Scripts._00_Runtime.Extra
+namespace UnityEditorEx.Runtime.editor_ex.Scripts._00_Runtime.Extra
 {
     public class AssetChooserAttribute : PropertyAttribute
     {

@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace ExtendedEditor.Editor.editor_ex.Scripts._90_Editor.Utils.Extensions
+namespace UnityEditorEx.Editor.editor_ex.Scripts._90_Editor.Utils.Extensions
 {
     public static class EditorExtensions
     {
