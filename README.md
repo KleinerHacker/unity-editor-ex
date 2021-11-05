@@ -4,6 +4,11 @@ Extension for Unity editor system
 # install
 Use this repository directly in Unity.
 
+### Open UPM
+URL: https://package.openupm.com
+
+Scope: org.pcsoft
+
 # usage
 
 ### Editor & Property Drawer
