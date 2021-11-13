@@ -1,9 +1,9 @@
 using System.Linq;
 using UnityEditor;
-using UnityEditorEx.Runtime.editor_ex.Scripts._00_Runtime.Extra;
+using UnityEditorEx.Runtime.editor_ex.Scripts.Runtime.Extra;
 using UnityEngine;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts._90_Editor.Extra
+namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Extra
 {
     [CustomPropertyDrawer(typeof(AssetChooserAttribute))]
     public sealed class AssetChooserPropertyDrawer : ExtendedDrawer
