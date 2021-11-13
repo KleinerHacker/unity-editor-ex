@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts._90_Editor.Utils
+namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils
 {
     public static class ExtendedEditorGUI
     {

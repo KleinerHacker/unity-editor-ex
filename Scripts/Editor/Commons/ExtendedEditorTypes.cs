@@ -1,6 +1,6 @@
 using System;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts._90_Editor.Commons
+namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Commons
 {
     public sealed class TabItem
     {
