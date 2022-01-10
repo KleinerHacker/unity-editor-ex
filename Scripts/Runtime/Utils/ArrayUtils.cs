@@ -9,7 +9,7 @@ namespace UnityEditorEx.Runtime.editor_ex.Scripts.Runtime.Utils
     {
         public static T[] CreateIdentifierArray<T,TE>(params TE[] excludes) where T : IIdentifiedObject<TE> where TE : Enum
         {
-            var sceneStates = Enum.GetValues(typeof(TE)).Cast<TE>().ToArray();
+            var sceneStates = Enum.GetValues(typeof(TE)).Cast<TE>().Distinct().ToArray();
             var list = new List<T>();
 
             foreach (var state in sceneStates)
@@ -25,7 +25,7 @@ namespace UnityEditorEx.Runtime.editor_ex.Scripts.Runtime.Utils
         
         public static T[] UpdateIdentifierArray<T,TE>(params T[] existing) where T : IIdentifiedObject<TE> where TE : Enum
         {
-            var sceneStates = Enum.GetValues(typeof(TE)).Cast<TE>().ToArray();
+            var sceneStates = Enum.GetValues(typeof(TE)).Cast<TE>().Distinct().ToArray();
             var list = new List<T>();
 
             foreach (var state in sceneStates)
