@@ -305,7 +305,7 @@ namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor
                 else if (attribute is SerializedPropertyIdentifiedArrayRepresentationAttribute arrayAttribute)
                 {
                     ArrayArea(arrayAttribute.Title, (SerializedProperty[]) field.GetValue(this),
-                        Enum.GetValues(arrayAttribute.EnumType).Cast<Enum>().ToArray(),
+                        Enum.GetValues(arrayAttribute.EnumType).Cast<Enum>().Distinct().ToArray(),
                         (o, property) => property.FindPropertyRelative("identifier").intValue == Convert.ToInt32(Convert.ChangeType(o, o.GetTypeCode())),
                         (o, property) => o.ToString());
                 }
