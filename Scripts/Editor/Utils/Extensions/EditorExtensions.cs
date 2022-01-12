@@ -1,3 +1,4 @@
+using System;
 using UnityEditor;
 
 namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils.Extensions
@@ -26,6 +27,59 @@ namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils.Extensions
             }
 
             return properties;
+        }
+
+        public static void SortArray(this SerializedProperty property, Comparison<SerializedProperty> comparison) => 
+            QuicksortArray(0, property.arraySize - 1, property, comparison);
+
+        private static void QuicksortArray(int left, int right, SerializedProperty property, Comparison<SerializedProperty> comparison)
+        {
+            if (left < right)
+            {
+                var splitter = Split(left, right, property, comparison);
+                QuicksortArray(left, splitter - 1, property, comparison);
+                QuicksortArray(splitter + 1, right, property, comparison);
+            }
+        }
+
+        private static int Split(int leftIn, int rightIn, SerializedProperty property, Comparison<SerializedProperty> comparison)
+        {
+            var left = leftIn;
+            //Starte mit j links vom Pivotelement
+            var right = rightIn - 1;
+            var pivot = property.GetArrayElementAtIndex(rightIn);
+
+            do
+            {
+                //Suche von links ein Element, welches größer als das Pivotelement ist
+                while (comparison(property.GetArrayElementAtIndex(left), pivot) < 0 && left < rightIn)
+                    left += 1;
+
+                //Suche von rechts ein Element, welches kleiner als das Pivotelement ist
+                while (comparison(property.GetArrayElementAtIndex(right), pivot) >= 0 && right > leftIn)
+                    right -= 1;
+
+                if (left < right)
+                {
+                    var leftProperty = property.GetArrayElementAtIndex(left);
+                    var rightProperty = property.GetArrayElementAtIndex(right);
+
+                    (leftProperty.managedReferenceValue, rightProperty.managedReferenceValue) =
+                        (rightProperty.managedReferenceValue, leftProperty.managedReferenceValue);
+                }
+            } while (left < right);
+            
+            // Tausche Pivotelement ([rightIn]) mit neuer endgültiger Position ([left])
+            if (comparison(property.GetArrayElementAtIndex(left), pivot) > 0)
+            {
+                var leftProperty = property.GetArrayElementAtIndex(left);
+                var rightProperty = property.GetArrayElementAtIndex(rightIn);
+
+                (leftProperty.managedReferenceValue, rightProperty.managedReferenceValue) =
+                    (rightProperty.managedReferenceValue, leftProperty.managedReferenceValue);
+            }
+
+            return left; // gib die Position des Pivotelements zurück
         }
     }
 }
