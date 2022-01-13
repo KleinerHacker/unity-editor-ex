@@ -244,5 +244,94 @@ namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils.Extensions
 
             Debug.Assert(false, $"Failed to set member {container}.{name} via reflection");
         }
+
+        public static bool Any(this SerializedProperty property, Predicate<SerializedProperty> predicate)
+        {
+            for (var i = 0; i < property.arraySize; i++)
+            {
+                var atIndex = property.GetArrayElementAtIndex(i);
+                if (predicate(atIndex))
+                    return true;
+            }
+
+            return false;
+        }
+        
+        public static bool None(this SerializedProperty property, Predicate<SerializedProperty> predicate)
+        {
+            for (var i = 0; i < property.arraySize; i++)
+            {
+                var atIndex = property.GetArrayElementAtIndex(i);
+                if (predicate(atIndex))
+                    return false;
+            }
+
+            return true;
+        }
+        
+        public static bool All(this SerializedProperty property, Predicate<SerializedProperty> predicate)
+        {
+            for (var i = 0; i < property.arraySize; i++)
+            {
+                var atIndex = property.GetArrayElementAtIndex(i);
+                if (!predicate(atIndex))
+                    return false;
+            }
+
+            return true;
+        }
+        
+        public static int IndexOf(this SerializedProperty property, Predicate<SerializedProperty> predicate)
+        {
+            for (var i = 0; i < property.arraySize; i++)
+            {
+                var atIndex = property.GetArrayElementAtIndex(i);
+                if (predicate(atIndex))
+                    return i;
+            }
+
+            return -1;
+        }
+        
+        public static IEnumerable<T> Select<T>(this SerializedProperty property, Func<SerializedProperty, T> mapper)
+        {
+            var list = new List<T>();
+            for (var i = 0; i < property.arraySize; i++)
+            {
+                var atIndex = property.GetArrayElementAtIndex(i);
+                var value = mapper(atIndex);
+                
+                list.Add(value);
+            }
+
+            return list;
+        }
+        
+        public static IEnumerable<SerializedProperty> Where(this SerializedProperty property, Predicate<SerializedProperty> predicate)
+        {
+            var list = new List<SerializedProperty>();
+            for (var i = 0; i < property.arraySize; i++)
+            {
+                var atIndex = property.GetArrayElementAtIndex(i);
+                if (predicate(atIndex))
+                {
+                    list.Add(atIndex);
+                }
+            }
+
+            return list;
+        }
+        
+        public static IEnumerable<SerializedProperty> ToProperties(this SerializedProperty property)
+        {
+            var list = new List<SerializedProperty>();
+            for (var i = 0; i < property.arraySize; i++)
+            {
+                var atIndex = property.GetArrayElementAtIndex(i);
+                list.Add(atIndex);
+            }
+
+            return list;
+        }
     }
 }
