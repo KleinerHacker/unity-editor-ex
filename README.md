@@ -23,3 +23,4 @@ Scope: org.pcsoft
 
 ### Extensions
 * Helper methods to find multiple properties for each array element `FindProperties` / `FindPropertiesRelative`
+  * Add Linq support for serialized properties if it is an array
