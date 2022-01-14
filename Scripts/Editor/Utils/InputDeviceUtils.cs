@@ -11,7 +11,7 @@ namespace UnityExtension.Editor.extension.Scripts.Editor.Utils
             return AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(x => x.GetTypes())
                 .Where(x => typeof(InputDevice).IsAssignableFrom(x))
-                .Select(x => (x.Name, x.FullName))
+                .Select(x => (x.Name, x.AssemblyQualifiedName))
                 .ToArray();
         }
     }
