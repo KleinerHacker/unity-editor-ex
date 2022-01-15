@@ -35,63 +35,21 @@ namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils.Extensions
             return properties;
         }
 
-        public static void SortArray(this SerializedProperty property, Comparison<SerializedProperty> comparison) =>
-            QuicksortArray(0, property.arraySize - 1, property, comparison);
-
-        private static void QuicksortArray(int left, int right, SerializedProperty property, Comparison<SerializedProperty> comparison)
+        public static void OrderBy<T>(this SerializedProperty property, Func<SerializedProperty, T> extractor)
         {
-            if (left < right)
+            var tmpList = new List<(SerializedProperty, object)>();
+            for (var i = 0; i < property.arraySize; i++)
             {
-                var splitter = Split(left, right, property, comparison);
-                QuicksortArray(left, splitter - 1, property, comparison);
-                QuicksortArray(splitter + 1, right, property, comparison);
-            }
-        }
-
-        private static int Split(int leftIn, int rightIn, SerializedProperty property, Comparison<SerializedProperty> comparison)
-        {
-            var left = leftIn;
-            //Starte mit j links vom Pivotelement
-            var right = rightIn - 1;
-            var pivot = property.GetArrayElementAtIndex(rightIn);
-
-            do
-            {
-                //Suche von links ein Element, welches größer als das Pivotelement ist
-                while (comparison(property.GetArrayElementAtIndex(left), pivot) < 0 && left < rightIn)
-                    left += 1;
-
-                //Suche von rechts ein Element, welches kleiner als das Pivotelement ist
-                while (comparison(property.GetArrayElementAtIndex(right), pivot) >= 0 && right > leftIn)
-                    right -= 1;
-
-                if (left < right)
-                {
-                    var leftProperty = property.GetArrayElementAtIndex(left);
-                    var rightProperty = property.GetArrayElementAtIndex(right);
-
-                    var leftVal = leftProperty.GetValue();
-                    var rightVal = rightProperty.GetValue();
-
-                    leftProperty.SetValue(rightVal);
-                    rightProperty.SetValue(leftVal);
-                }
-            } while (left < right);
-
-            // Tausche Pivotelement ([rightIn]) mit neuer endgültiger Position ([left])
-            if (comparison(property.GetArrayElementAtIndex(left), pivot) > 0)
-            {
-                var leftProperty = property.GetArrayElementAtIndex(left);
-                var rightProperty = property.GetArrayElementAtIndex(rightIn);
-
-                var leftVal = leftProperty.GetValue();
-                var rightVal = rightProperty.GetValue();
-
-                leftProperty.SetValue(rightVal);
-                rightProperty.SetValue(leftVal);
+                var elementProperty = property.GetArrayElementAtIndex(i);
+                tmpList.Add((elementProperty, elementProperty.GetValue()));
             }
 
-            return left; // gib die Position des Pivotelements zurück
+            tmpList = tmpList.OrderBy(x => extractor(x.Item1)).ToList();
+            
+            for (var i = 0; i < property.arraySize; i++)
+            {
+                property.GetArrayElementAtIndex(i).SetValue(tmpList[i].Item2);
+            }
         }
 
         /// (Extension) Get the value of the serialized property.
