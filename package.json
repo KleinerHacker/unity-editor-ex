@@ -1,6 +1,6 @@
 {
   "name": "org.pcsoft.editor-ex",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "displayName": "Unity Editor Extension",
   "description": "Extension for Editor system of Unity.",
   "unity": "2021.1",

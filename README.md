@@ -4,11 +4,6 @@ Extension for Unity editor system
 # install
 Use this repository directly in Unity.
 
-### Open UPM
-URL: https://package.openupm.com
-
-Scope: org.pcsoft
-
 # usage
 
 ### Editor & Property Drawer
@@ -20,8 +15,6 @@ Scope: org.pcsoft
 * `LayerMask` to mark integer field as layer
 * `AssetChooser` to mark field as asset reference to search in database
 * `Scene` to mark string field as scene reference
-* `InputDevice` to store in a string the type reference to all existing input device classes
 
 ### Extensions
 * Helper methods to find multiple properties for each array element `FindProperties` / `FindPropertiesRelative`
-  * Add Linq support for serialized properties if it is an array
