@@ -18,3 +18,6 @@ Use this repository directly in Unity.
 
 ### Extensions
 * Helper methods to find multiple properties for each array element `FindProperties` / `FindPropertiesRelative`
+* `PlayerSettingsEx` to handle easier:
+  * Check scripting symbol is defined
+  * Add or delete scripting symbols
