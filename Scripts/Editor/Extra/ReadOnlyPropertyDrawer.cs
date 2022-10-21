@@ -5,7 +5,7 @@ using UnityEngine;
 namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Extra
 {
     [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
-    public sealed class ReadOnlyPropertyDrawer : ConditionalDrawer
+    public sealed class ReadOnlyPropertyDrawer : ConditionalDrawer<ReadOnlyAttribute>
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {

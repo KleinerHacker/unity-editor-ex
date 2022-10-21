@@ -7,7 +7,7 @@ using UnityEngine;
 namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Extra
 {
     [CustomPropertyDrawer(typeof(HideAttribute))]
-    public sealed class HideDrawer : ConditionalDrawer
+    public sealed class HideDrawer : ConditionalDrawer<HideAttribute>
     {
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {

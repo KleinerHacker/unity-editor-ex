@@ -5,7 +5,7 @@ using UnityEditorEx.Runtime.editor_ex.Scripts.Runtime.Extra;
 
 namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Extra
 {
-    public abstract class ConditionalDrawer : ExtendedDrawer
+    public abstract class ConditionalDrawer<T> : ExtendedDrawer where T : ConditionalAttribute
     {
         protected bool InvokeMethod(SerializedProperty property)
         {
@@ -19,7 +19,7 @@ namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Extra
 
         protected MethodInfo FindMethod(SerializedProperty property)
         {
-            var myAttribute = (HideAttribute)attribute;
+            var myAttribute = (T)attribute;
             if (string.IsNullOrWhiteSpace(myAttribute.ConditionMethod))
                 return null;
             
