@@ -1,8 +1,9 @@
-using UnityEngine;
+using System;
 
 namespace UnityEditorEx.Runtime.editor_ex.Scripts.Runtime.Extra
 {
-    public class ReadOnlyAttribute : PropertyAttribute
+    [AttributeUsage(AttributeTargets.Field)]
+    public class ReadOnlyAttribute : ConditionalAttribute
     {
     }
 }
