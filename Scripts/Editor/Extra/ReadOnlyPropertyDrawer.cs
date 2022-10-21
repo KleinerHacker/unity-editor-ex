@@ -5,11 +5,11 @@ using UnityEngine;
 namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Extra
 {
     [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
-    public sealed class ReadOnlyPropertyDrawer : ExtendedDrawer
+    public sealed class ReadOnlyPropertyDrawer : ConditionalDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            GUI.enabled = false;
+            GUI.enabled = FindMethod(property) == null || InvokeMethod(property);
             EditorGUI.PropertyField(position, property, label, true);
             GUI.enabled = true;
         }

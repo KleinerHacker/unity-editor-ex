@@ -1,14 +1,12 @@
 using System;
 using System.Linq;
+using UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions;
 using UnityEditor;
-using UnityEditorEx.Editor.editor_ex.Scripts.Editor;
 using UnityEditorEx.Runtime.editor_ex.Scripts.Runtime.Extra;
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityExtension.Editor.extension.Scripts.Editor.Utils;
-using UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions;
 
-namespace UnityExtension.Editor.extension.Scripts.Editor.Assets
+namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Extra
 {
     [CustomPropertyDrawer(typeof(InputDeviceAttribute))]
     public sealed class InputDeviceDrawer : ExtendedDrawer
