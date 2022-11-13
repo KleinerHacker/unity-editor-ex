@@ -35,5 +35,61 @@ namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils
 
             return newAsset;
         }
+
+        public static void SymbolField(GUIContent label, string symbolName, GUIStyle guiStyle, params GUILayoutOption[] layoutOptions)
+        {
+            var defined = PlayerSettingsEx.IsScriptingSymbolDefined(symbolName);
+            var newDefined = guiStyle == null ?
+                EditorGUILayout.Toggle(label, defined, layoutOptions) :
+                EditorGUILayout.Toggle(label, defined, guiStyle, layoutOptions);
+            if (defined != newDefined)
+            {
+                if (newDefined)
+                {
+                    PlayerSettingsEx.AddScriptingSymbol(symbolName);
+                }
+                else
+                {
+                    PlayerSettingsEx.RemoveScriptingSymbol(symbolName);
+                }
+            }
+        }
+
+        public static void SymbolField(string label, string symbolName, GUIStyle guiStyle, params GUILayoutOption[] layoutOptions) =>
+            SymbolField(new GUIContent(label), symbolName, guiStyle, layoutOptions);
+
+        public static void SymbolField(GUIContent label, string symbolName, params GUILayoutOption[] layoutOptions) =>
+            SymbolField(label, symbolName, null, layoutOptions);
+
+        public static void SymbolField(string label, string symbolName, params GUILayoutOption[] layoutOptions) =>
+            SymbolField(new GUIContent(label), symbolName, layoutOptions);
+        
+        public static void SymbolFieldLeft(GUIContent label, string symbolName, GUIStyle guiStyle, params GUILayoutOption[] layoutOptions)
+        {
+            var defined = PlayerSettingsEx.IsScriptingSymbolDefined(symbolName);
+            var newDefined = guiStyle == null ? 
+                EditorGUILayout.ToggleLeft(label, defined, layoutOptions) : 
+                EditorGUILayout.ToggleLeft(label, defined, guiStyle, layoutOptions);
+            if (defined != newDefined)
+            {
+                if (newDefined)
+                {
+                    PlayerSettingsEx.AddScriptingSymbol(symbolName);
+                }
+                else
+                {
+                    PlayerSettingsEx.RemoveScriptingSymbol(symbolName);
+                }
+            }
+        }
+
+        public static void SymbolFieldLeft(string label, string symbolName, GUIStyle guiStyle, params GUILayoutOption[] layoutOptions) =>
+            SymbolFieldLeft(new GUIContent(label), symbolName, guiStyle, layoutOptions);
+
+        public static void SymbolFieldLeft(GUIContent label, string symbolName, params GUILayoutOption[] layoutOptions) =>
+            SymbolFieldLeft(label, symbolName, null, layoutOptions);
+
+        public static void SymbolFieldLeft(string label, string symbolName, params GUILayoutOption[] layoutOptions) =>
+            SymbolFieldLeft(new GUIContent(label), symbolName, layoutOptions);
     }
 }
