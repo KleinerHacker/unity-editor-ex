@@ -40,8 +40,8 @@ namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils
         {
             var defined = PlayerSettingsEx.IsScriptingSymbolDefined(symbolName);
             var newDefined = guiStyle == null ?
-                EditorGUILayout.Toggle(label, defined, layoutOptions) :
-                EditorGUILayout.Toggle(label, defined, guiStyle, layoutOptions);
+                GUILayout.Toggle(defined, label, layoutOptions) :
+                GUILayout.Toggle(defined, label, guiStyle, layoutOptions);
             if (defined != newDefined)
             {
                 if (newDefined)
