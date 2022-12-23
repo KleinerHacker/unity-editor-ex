@@ -24,8 +24,8 @@ namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Extra
 
             var assetObject = property.objectReferenceValue;
             _selection = assetObjects.ToList().IndexOf(assetObject);
-            _selection = EditorGUI.Popup(position, _selection, assetObjects.Select(x => x.name).ToArray());
-            property.objectReferenceValue = assetObjects[_selection];
+            _selection = EditorGUI.Popup(position, label, _selection, assetObjects.Select(x => new GUIContent(x.name)).ToArray());
+            property.objectReferenceValue = _selection < 0 || _selection >= assetObjects.Length ? null : assetObjects[_selection];
         }
     }
 }
