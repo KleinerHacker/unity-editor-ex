@@ -295,14 +295,32 @@ namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils.Extensions
         public static string GetRelativeString(this SerializedProperty property, string propName) => 
             property.FindPropertyRelative(propName).stringValue;
         
+        public static void SetRelativeString(this SerializedProperty property, string propName, string value) => 
+            property.FindPropertyRelative(propName).stringValue = value;
+        
         public static int GetRelativeInt(this SerializedProperty property, string propName) => 
             property.FindPropertyRelative(propName).intValue;
+        
+        public static void SetRelativeInt(this SerializedProperty property, string propName, int value) => 
+            property.FindPropertyRelative(propName).intValue = value;
         
         public static float GetRelativeFloat(this SerializedProperty property, string propName) => 
             property.FindPropertyRelative(propName).floatValue;
         
+        public static void SetRelativeFloat(this SerializedProperty property, string propName, float value) => 
+            property.FindPropertyRelative(propName).floatValue = value;
+        
         public static bool GetRelativeBool(this SerializedProperty property, string propName) => 
             property.FindPropertyRelative(propName).boolValue;
+        
+        public static void SetRelativeBool(this SerializedProperty property, string propName, bool value) => 
+            property.FindPropertyRelative(propName).boolValue = value;
+
+        public static T GetRelativeEnum<T>(this SerializedProperty property, string propName) where T : Enum =>
+            (T) Enum.ToObject(typeof(T), property.FindPropertyRelative(propName).intValue);
+        
+        public static void SetRelativeEnum<T>(this SerializedProperty property, string propName, T value) where T : Enum =>
+            property.FindPropertyRelative(propName).intValue = Convert.ToInt32(value);
 
         public static bool EqualsString(this SerializedProperty property, SerializedProperty other, StringComparison comparison) =>
             string.Equals(property.stringValue, other?.stringValue, comparison);
@@ -333,5 +351,11 @@ namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils.Extensions
         
         public static bool EqualsBool(this SerializedProperty property, string propName, SerializedProperty other, string otherName) =>
             Equals(property.FindPropertyRelative(propName)?.boolValue, other?.FindPropertyRelative(otherName)?.boolValue);
+        
+        public static bool EqualsEnum(this SerializedProperty property, SerializedProperty other) =>
+            Equals(property.intValue, other?.intValue);
+        
+        public static bool EqualsEnum(this SerializedProperty property, string propName, SerializedProperty other, string otherName) =>
+            Equals(property.FindPropertyRelative(propName)?.intValue, other?.FindPropertyRelative(otherName)?.intValue);
     }
 }
