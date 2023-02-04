@@ -291,5 +291,47 @@ namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils.Extensions
 
             return list;
         }
+
+        public static string GetRelativeString(this SerializedProperty property, string propName) => 
+            property.FindPropertyRelative(propName).stringValue;
+        
+        public static int GetRelativeInt(this SerializedProperty property, string propName) => 
+            property.FindPropertyRelative(propName).intValue;
+        
+        public static float GetRelativeFloat(this SerializedProperty property, string propName) => 
+            property.FindPropertyRelative(propName).floatValue;
+        
+        public static bool GetRelativeBool(this SerializedProperty property, string propName) => 
+            property.FindPropertyRelative(propName).boolValue;
+
+        public static bool EqualsString(this SerializedProperty property, SerializedProperty other, StringComparison comparison) =>
+            string.Equals(property.stringValue, other?.stringValue, comparison);
+        
+        public static bool EqualsString(this SerializedProperty property, SerializedProperty other) =>
+            string.Equals(property.stringValue, other?.stringValue);
+        
+        public static bool EqualsString(this SerializedProperty property, string propName, SerializedProperty other, string otherName, StringComparison comparison) =>
+            string.Equals(property.FindPropertyRelative(propName)?.stringValue, other?.FindPropertyRelative(otherName)?.stringValue, comparison);
+        
+        public static bool EqualsString(this SerializedProperty property, string propName, SerializedProperty other, string otherName) =>
+            string.Equals(property.FindPropertyRelative(propName)?.stringValue, other?.FindPropertyRelative(otherName)?.stringValue);
+        
+        public static bool EqualsInt(this SerializedProperty property, SerializedProperty other) =>
+            Equals(property.intValue, other?.intValue);
+        
+        public static bool EqualsInt(this SerializedProperty property, string propName, SerializedProperty other, string otherName) =>
+            Equals(property.FindPropertyRelative(propName)?.intValue, other?.FindPropertyRelative(otherName)?.intValue);
+        
+        public static bool EqualsFloat(this SerializedProperty property, SerializedProperty other) =>
+            Equals(property.floatValue, other?.floatValue);
+        
+        public static bool EqualsFloat(this SerializedProperty property, string propName, SerializedProperty other, string otherName) =>
+            Equals(property.FindPropertyRelative(propName)?.floatValue, other?.FindPropertyRelative(otherName)?.floatValue);
+        
+        public static bool EqualsBool(this SerializedProperty property, SerializedProperty other) =>
+            Equals(property.boolValue, other?.boolValue);
+        
+        public static bool EqualsBool(this SerializedProperty property, string propName, SerializedProperty other, string otherName) =>
+            Equals(property.FindPropertyRelative(propName)?.boolValue, other?.FindPropertyRelative(otherName)?.boolValue);
     }
 }
