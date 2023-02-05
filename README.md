@@ -13,13 +13,13 @@ Use this repository directly in Unity.
   * `SerializedPropertyReference` to setup reference in target object
   * `SerializedPropertyDefaultPresentation` to present property in default editor way
   * `SerializedPropertyIdentifiedObjectPresentation` to present property as `IIdentifiedObject` (must be an array of `SerializedProperty`)
-  * 'SerializedPropertyLabeledGroup' to show propety under this group
-  * 'SerializedPropertyFoldGroup' to show property under this fold group
-  * 'SerializedPropertyTabGroup' to show property under this tab
+  * `SerializedPropertyLabeledGroup` to show propety under this group
+  * `SerializedPropertyFoldGroup` to show property under this fold group
+  * `SerializedPropertyTabGroup` to show property under this tab
   
 ### Sepcific Reorderable Tables
 * `TableReorderableTable` to show an table
-  * Use 'Columns.Add` to add:
+  * Use `Columns.Add` to add:
     * `FixedColumn` - a column with fixed size
     * `FlexibleColumn` - a column with percentage size or -1 for empty space
   * Do not override `DrawHeaderCallback` or `DrawElementCallback`
