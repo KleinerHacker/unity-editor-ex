@@ -321,6 +321,12 @@ namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils.Extensions
         
         public static void SetRelativeEnum<T>(this SerializedProperty property, string propName, T value) where T : Enum =>
             property.FindPropertyRelative(propName).intValue = Convert.ToInt32(value);
+        
+        public static T GetEnum<T>(this SerializedProperty property) where T : Enum =>
+            (T) Enum.ToObject(typeof(T), property.intValue);
+        
+        public static void SetEnum<T>(this SerializedProperty property, T value) where T : Enum =>
+            property.intValue = Convert.ToInt32(value);
 
         public static bool EqualsString(this SerializedProperty property, SerializedProperty other, StringComparison comparison) =>
             string.Equals(property.stringValue, other?.stringValue, comparison);
