@@ -1,6 +1,6 @@
 {
   "name": "org.pcsoft.editor-ex",
-  "version": "1.1.16",
+  "version": "1.1.17",
   "displayName": "Unity Editor Extension",
   "description": "Extension for Editor system of Unity.",
   "unity": "2021.3",
@@ -11,7 +11,7 @@
   ],
   "dependencies": {
     "com.unity.inputsystem": "1.4.0",
-    "org.pcsoft.common-ex": "1.1.8",
+    "org.pcsoft.common-ex": "1.1.10",
     "org.pcsoft.asset-loader":"2.0.1"
   },
   "author": {
