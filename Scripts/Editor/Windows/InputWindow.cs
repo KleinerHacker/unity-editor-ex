@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Windows
+namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Windows
 {
     internal sealed class InputWindow : EditorWindow
     {

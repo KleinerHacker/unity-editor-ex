@@ -11,7 +11,7 @@
   ],
   "dependencies": {
     "com.unity.inputsystem": "1.4.0",
-    "org.pcsoft.common-ex": "1.1.10",
+    "org.pcsoft.unity-base": "1.1.0",
     "org.pcsoft.asset-loader":"2.0.1"
   },
   "author": {

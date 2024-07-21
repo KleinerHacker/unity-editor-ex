@@ -1,6 +1,6 @@
 using System;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Commons
+namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Commons
 {
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
     public class SerializedPropertyReferenceAttribute : Attribute

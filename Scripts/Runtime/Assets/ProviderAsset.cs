@@ -5,7 +5,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace UnityEditorEx.Runtime.editor_ex.Scripts.Runtime.Assets
+namespace UnityEditorEx.Runtime.Projects.unity_editor_ex.Scripts.Runtime.Assets
 {
     public abstract class ProviderAsset<T> : ScriptableObject where T : ProviderAsset<T>
     {

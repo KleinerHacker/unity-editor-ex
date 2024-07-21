@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils.Extensions
+namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Utils.Extensions
 {
     public static class EditorExtensions
     {
