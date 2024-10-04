@@ -3,7 +3,8 @@
     "rootNamespace": "UnityEditorEx.Runtime",
     "references": [
         "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:64c52e74a682df04189ccbd30b6ca5aa"
+        "GUID:64c52e74a682df04189ccbd30b6ca5aa",
+        "GUID:03e750fc17f6cff499337d89b1e613c8"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

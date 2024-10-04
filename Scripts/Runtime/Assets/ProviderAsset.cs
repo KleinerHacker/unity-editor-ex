@@ -1,5 +1,5 @@
 #if !UNITY_EDITOR
-using UnityAssetLoader.Runtime.asset_loader.Scripts.Runtime;
+using UnityAssetLoader.Runtime.Projects.unity_asset_loader.Scripts.Runtime;
 #endif
 using System;
 using UnityEditor;
