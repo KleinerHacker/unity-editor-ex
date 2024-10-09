@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine.InputSystem;
 
-namespace UnityExtension.Editor.extension.Scripts.Editor.Utils
+namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Utils
 {
     internal static class InputDeviceUtils
     {

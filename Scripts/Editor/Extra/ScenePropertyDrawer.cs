@@ -1,8 +1,8 @@
 using UnityEditor;
-using UnityEditorEx.Runtime.editor_ex.Scripts.Runtime.Extra;
+using UnityEditorEx.Runtime.Projects.unity_editor_ex.Scripts.Runtime.Extra;
 using UnityEngine;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Extra
+namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Extra
 {
     [CustomPropertyDrawer(typeof(SceneAttribute))]
     public sealed class ScenePropertyDrawer : ExtendedDrawer

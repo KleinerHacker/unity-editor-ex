@@ -1,9 +1,9 @@
 using UnityEditor;
-using UnityEditorEx.Runtime.editor_ex.Scripts.Runtime.Extra;
+using UnityEditorEx.Runtime.Projects.unity_editor_ex.Scripts.Runtime.Extra;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Extra
+namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Extra
 {
     [CustomPropertyDrawer(typeof(LayerMaskAttribute))]
     public sealed class LayerMaskPropertyDrawer : ExtendedDrawer
