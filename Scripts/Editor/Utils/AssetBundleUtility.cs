@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils
+namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Utils
 {
     public static class AssetBundleUtility
     {

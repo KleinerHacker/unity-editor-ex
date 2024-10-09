@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions;
+using UnityBase.Runtime.Projects.unity_base.Scripts.Runtime.Utils.Extensions;
 using UnityEditor;
-using UnityEditorEx.Runtime.editor_ex.Scripts.Runtime.Extra;
+using UnityEditorEx.Runtime.Projects.unity_editor_ex.Scripts.Runtime.Extra;
 using UnityEngine;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Extra
+namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Extra
 {
     [CustomPropertyDrawer(typeof(SortingLayerAttribute))]
     public sealed class SortingLayerDrawer : ExtendedDrawer

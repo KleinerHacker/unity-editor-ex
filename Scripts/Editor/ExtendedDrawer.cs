@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
-using UnityEditorEx.Editor.editor_ex.Scripts.Editor.Commons;
+using UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Commons;
 using UnityEngine;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor
+namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor
 {
     public abstract class ExtendedDrawer : PropertyDrawer
     {

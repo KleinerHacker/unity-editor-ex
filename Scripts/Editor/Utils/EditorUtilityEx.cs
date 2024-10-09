@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Reflection;
 using UnityEditor;
-using UnityEditorEx.Editor.editor_ex.Scripts.Editor.Windows;
+using UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Windows;
 using UnityEngine;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils
+namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Utils
 {
     public static class EditorUtilityEx
     {

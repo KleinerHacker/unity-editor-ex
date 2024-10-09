@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace UnityEditorEx.Runtime.editor_ex.Scripts.Runtime.Extra
+namespace UnityEditorEx.Runtime.Projects.unity_editor_ex.Scripts.Runtime.Extra
 {
     [AttributeUsage(AttributeTargets.Field)]
     public class TagAttribute : PropertyAttribute

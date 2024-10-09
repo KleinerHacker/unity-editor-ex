@@ -1,9 +1,9 @@
 using System.Linq;
-using UnityCommonEx.Runtime.common_ex.Scripts.Runtime.Utils.Extensions;
+using UnityBase.Runtime.Projects.unity_base.Scripts.Runtime.Utils.Extensions;
 using UnityEditor;
 using UnityEditor.Build;
 
-namespace UnityEditorEx.Editor.editor_ex.Scripts.Editor.Utils
+namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Utils
 {
     public static class PlayerSettingsEx
     {
