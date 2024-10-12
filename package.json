@@ -1,6 +1,6 @@
 {
   "name": "org.pcsoft.editor-ex",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "displayName": "Unity Editor Extension",
   "description": "Extension for Editor system of Unity.",
   "unity": "2021.3",
@@ -12,7 +12,7 @@
   "dependencies": {
     "com.unity.inputsystem": "1.10.0",
     "org.pcsoft.unity-base": "2.0.0-EA.2",
-    "org.pcsoft.asset-loader":"2.1.0"
+    "org.pcsoft.asset-loader":"2.1.1"
   },
   "author": {
     "name": "Pfeiffer C Soft",
