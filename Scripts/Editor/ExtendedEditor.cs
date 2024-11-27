@@ -302,7 +302,7 @@ namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor
                     EditorGUILayout.PropertyField((SerializedProperty) field.GetValue(this), GUIContent.none, true);
                     ((SerializedProperty) field.GetValue(this)).isExpanded = true;
                 }
-                else if (attribute is SerializedPropertyIdentifiedArrayRepresentationAttribute arrayAttribute)
+                else if (attribute is SerializedPropertyIdentifiableArrayRepresentationAttribute arrayAttribute)
                 {
                     ArrayArea(arrayAttribute.Title, (SerializedProperty[]) field.GetValue(this),
                         Enum.GetValues(arrayAttribute.EnumType).Cast<Enum>().Distinct().ToArray(),
