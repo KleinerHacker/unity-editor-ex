@@ -9,9 +9,9 @@ namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Extra
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            GUI.enabled = FindMethod(property) == null || InvokeMethod(property);
+            EditorGUI.BeginDisabledGroup(FindMethod(property) == null || !InvokeMethod(property));
             EditorGUI.PropertyField(position, property, label, true);
-            GUI.enabled = true;
+            EditorGUI.EndDisabledGroup();
         }
     }
 }

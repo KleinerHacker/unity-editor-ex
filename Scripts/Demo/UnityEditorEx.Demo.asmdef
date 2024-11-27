@@ -1,0 +1,16 @@
+{
+    "name": "UnityEditorEx.Demo",
+    "rootNamespace": "UnityEditorEx.Demo",
+    "references": [
+        "GUID:86c5ae22b787083498226e9faa99731d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

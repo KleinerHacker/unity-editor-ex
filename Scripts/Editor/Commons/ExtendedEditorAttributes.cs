@@ -46,11 +46,11 @@ namespace UnityEditorEx.Editor.Projects.unity_editor_ex.Scripts.Editor.Commons
     }
 
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
-    public sealed class SerializedPropertyIdentifiedArrayRepresentationAttribute : SerializedPropertyRepresentationAttribute
+    public sealed class SerializedPropertyIdentifiableArrayRepresentationAttribute : SerializedPropertyRepresentationAttribute
     {
         public Type EnumType { get; set; }
 
-        public SerializedPropertyIdentifiedArrayRepresentationAttribute(string title, Type enumType)
+        public SerializedPropertyIdentifiableArrayRepresentationAttribute(string title, Type enumType)
         {
             Title = title;
             EnumType = enumType;
